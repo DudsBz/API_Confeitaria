@@ -18,10 +18,7 @@ def cardapio_route():
   cardapio = get_cardapio()
   return cardapio
 
-@app.route("/cardapio/<int:id>")
-def cardapio_id_route(id):
-  cardapio = get_cardapio()
-  return cardapio
+
 
 
 

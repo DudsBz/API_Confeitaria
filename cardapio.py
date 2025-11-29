@@ -1,17 +1,13 @@
+from conexao import get_conexao
+import get_conexao as gc
+
 def get_cardapio():
-    cardapio = [
-        {
-            'id': 1,
-            'titulo': 'Bolo de Chocolate',
-            'descricao': 'Ai que delicia cara',
-            'foto': ''
-        },
-        {
-            'id': 2,
-            'titulo': 'Bolo de Alpino',
-            'descricao': 'Ai que delicia segundo cara',
-            'foto': ''
-        }
-    ]
+    conn = get_conexao()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cardapio;")
+    cardapio = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
     return cardapio
     
